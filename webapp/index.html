@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Joonix Gold</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Joonix Gold</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Joonix</h2>
-    <button onclick="showPage('buy')">💰 Купить</button>
-    <button onclick="showPage('orders')">📦 Мои заказы</button>
-    <button onclick="showPage('settings')">⚙️ Настройки</button>
+<div class="app">
+  <h1>Joonix Gold</h1>
+
+  <div class="card">
+    <p>Курс: <b>1 Gold = 0.67 RUB</b></p>
+    <input id="goldInput" type="number" min="100" step="1" value="100"/>
+    <button onclick="buyGold()">Купить</button>
   </div>
+</div>
 
-  <div class="content">
-    <div id="buy" class="page active">
-      <h1>Standoff 2</h1>
-      <p>Курс: <b>1 Gold = 0.67 RUB</b></p>
-
-      <input id="goldInput" type="number" min="100" value="100" />
-      <button onclick="buyGold()">Купить</button>
-    </div>
-
-    <div id="orders" class="page">
-      <h1>Мои заказы</h1>
-      <div id="ordersList"></div>
-    </div>
-
-    <div id="settings" class="page">
-      <h1>О сервисе</h1>
-      <a href="http://docs.google.com/document/d/1yjXpk6-H1sA4hkUCwutFBEwHv25--k1zBYZgH16i1Ok" target="_blank">Пользовательское соглашение</a><br/>
-      <a href="http://docs.google.com/document/d/1o4LBBlGi1iy8omOh8c1bLSexxm4MeW3iW4PQZRBRt_A" target="_blank">Политика конфиденциальности</a>
-    </div>
-  </div>
-
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="script.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
