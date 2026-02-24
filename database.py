@@ -8,7 +8,6 @@ from sqlalchemy.orm import declarative_base, relationship
 from config import DATABASE_URL
 
 Base = declarative_base()
-
 engine = create_async_engine(DATABASE_URL, echo=False)
 SessionLocal = async_sessionmaker(engine, expire_on_commit=False)
 
@@ -24,9 +23,9 @@ class User(Base):
     gold_balance = Column(Integer, default=0)
     total_spent = Column(Float, default=0)
     rejection_count = Column(Integer, default=0)
+    is_moderator = Column(Boolean, default=False)
 
     created_at = Column(DateTime, default=datetime.utcnow)
-
     orders = relationship("Order", back_populates="user")
 
 
@@ -41,12 +40,12 @@ class Order(Base):
     listing_price = Column(Float)
 
     status = Column(String, default="pending")
-    rejection_reason = Column(Text, nullable=True)
+    rejection_reason = Column(Text)
+    review_sent = Column(Boolean, default=False)
 
-    screenshot_file_id = Column(String, nullable=True)
+    screenshot_file_id = Column(String)
 
     created_at = Column(DateTime, default=datetime.utcnow)
-
     user = relationship("User", back_populates="orders")
 
 
@@ -58,7 +57,7 @@ class PromoCode(Base):
     gold_amount = Column(Integer)
     max_activations = Column(Integer)
     activations = Column(Integer, default=0)
-    expires_at = Column(DateTime, nullable=True)
+    expires_at = Column(DateTime)
     is_active = Column(Boolean, default=True)
 
 
