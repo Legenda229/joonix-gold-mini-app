@@ -11,7 +11,7 @@ MOD_GROUP = "@ueiwiwieieissiedjdjxjzzt"
 NEWS_CHANNEL = "@joonix_news"
 REVIEWS_CHANNEL = "@JoonixGold_otvizi"
 
-WEBAPP_URL = os.getenv("WEBAPP_URL", "https://example.com")
+WEBAPP_URL = os.getenv("WEBAPP_URL", "https://joonix-gold-mini-app.railway.internal")
 
 DEFAULT_RATE = float(os.getenv("RATE", 0.67))
 REVIEW_CASHBACK = int(os.getenv("REVIEW_CASHBACK", 3))
