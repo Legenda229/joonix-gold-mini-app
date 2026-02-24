@@ -2,3 +2,5 @@ aiogram==3.4.1
 SQLAlchemy==2.0.25
 aiosqlite
 python-dotenv
+fastapi
+uvicorn
