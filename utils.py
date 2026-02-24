@@ -1,4 +1,4 @@
-from config import DEFAULT_RATE, REJECTION_COMPENSATION
+from config import DEFAULT_RATE
 
 
 def calc_price(gold: int, rate: float = DEFAULT_RATE) -> float:
@@ -11,9 +11,9 @@ def calc_listing_price(gold: int, rate: float = DEFAULT_RATE) -> float:
 
 def get_compensation(gold_amount: int) -> int:
     if 100 <= gold_amount <= 199:
-        return REJECTION_COMPENSATION["100-199"]
+        return 5
     if 200 <= gold_amount <= 399:
-        return REJECTION_COMPENSATION["200-399"]
+        return 7
     if gold_amount >= 400:
-        return REJECTION_COMPENSATION["400+"]
+        return 10
     return 0
